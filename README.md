@@ -2,9 +2,9 @@
 
 WiFi HID Injector for Fun & Profit
 
-Author: Luca Bongiorni <info@whid.ninja>  http://whid.ninja
+Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
-Based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
+Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
 
 ## WHID's Cutomized Hardware is under R&D. Stay Tuned! ##
 
