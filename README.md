@@ -12,6 +12,8 @@ Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/prototype2.jpg" width="300">
 
+<img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/plastic_case.jpg" width="300">
+
 
 ## Third-Party Softwares Compatible with WHID's Hardware ##
 
