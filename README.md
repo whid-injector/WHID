@@ -41,4 +41,8 @@ Usually, I create a fancy brochure (sample template https://github.com/whid-inje
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/Brochure_front.jpg" width="300">
 
+## Video Tutorials ##
+
+[![How To Install WHID Software](https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/snapshot_youtube_1.jpg)](https://www.youtube.com/watch?v=MRGUSPW-Cr0)
+
 ## More to come... ##
