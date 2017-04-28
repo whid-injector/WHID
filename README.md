@@ -2,6 +2,8 @@
 
 WiFi HID Injector for Fun & Profit
 
+Pre-Orders Available at https://blog.aprbrother.com/product/cactus-whid 
+
 Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
 Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
@@ -14,6 +16,9 @@ Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/plastic_case.jpg" width="300">
 
+## Documentation WIKI ##
+
+https://github.com/whid-injector/WHID/wiki
 
 ## Third-Party Softwares Compatible with WHID's Hardware ##
 

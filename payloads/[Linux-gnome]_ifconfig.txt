@@ -1,0 +1,4 @@
+Delay
+Press:134+195
+PrintLine:gnome-terminal
+PrintLine:ifconfig
