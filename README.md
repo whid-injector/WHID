@@ -48,6 +48,8 @@ Usually, I create a fancy brochure (sample template https://github.com/whid-inje
 
 ## Video Tutorials ##
 
+[![WHID's Attack Simulation](https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/snapshot_youtube_2.jpg)](https://www.youtube.com/watch?v=U-TtobZXJcw)
+
 
 [![How To Install WHID Software](https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/snapshot_youtube_1.jpg)](https://www.youtube.com/watch?v=MRGUSPW-Cr0)
 
