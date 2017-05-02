@@ -15,7 +15,7 @@ Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
 
 ## USB Pinouts ##
 
-In order to make easier the process of weaponizing USB gadgets you can solder the USB wires to the dedicated pinout.
+In order to make easier the process of weaponizing USB gadgets, you can solder the USB wires to the dedicated pinouts.
 
 The pin closer to USB-A is GND. The pins are:
 
@@ -26,7 +26,7 @@ The pin closer to USB-A is GND. The pins are:
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/hardware/p2-usb-pinout.png" width="300">
 
-[ If also an USB HUB is needed (i.e. to weaponized a wired mouse), usually, I do use this one https://www.tindie.com/products/mux/nanohub-tiny-usb-hub-for-hacking-projects ]
+[ If also an USB HUB is needed (i.e. to weaponize a wired mouse), usually, I do use this one https://www.tindie.com/products/mux/nanohub-tiny-usb-hub-for-hacking-projects ]
 
 ## Documentation WIKI ##
 
