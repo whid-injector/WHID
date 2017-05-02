@@ -8,10 +8,25 @@ Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
 Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
 
-## WHID's Cutomized Hardware is under R&D. Stay Tuned! ##
+## The Hardware ##
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/collage.jpg" width="300">
 
+
+## USB Pinouts ##
+
+In order to make easier the process of weaponizing USB gadgets you can solder the USB wires to the dedicated pinout.
+
+The pin closer to USB-A is GND. The pins are:
+
+* GND 
+* D+ 
+* D-  
+* VCC 
+
+<img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/hardware/p2-usb-pinout.png" width="300">
+
+[ If also an USB HUB is needed (i.e. to weaponized a wired mouse), usually, I do use this one https://www.tindie.com/products/mux/nanohub-tiny-usb-hub-for-hacking-projects ]
 
 ## Documentation WIKI ##
 
