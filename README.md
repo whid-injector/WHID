@@ -11,7 +11,6 @@ Available at:
 
 Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
-Initial sw based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
 
 ## The Hardware ##
 
@@ -56,7 +55,7 @@ Deploy WHID on Victim's machine and remotely control it by  accessing its WiFi A
 
 - Social Engineering: Deploy WHID inside an USB-enable gadget
 
-The main idea behind it is to test for Social Engineering weaknesses within your target organization (e.g. DLP policy violations) and to bypass phisical access restrictions to Target's device.
+The main idea behind it is to test for Social Engineering weaknesses within your target organization (e.g. DLP policy violations) and to bypass physical access restrictions to Target's device.
 Usually, I create a fancy brochure (sample template https://github.com/whid-injector/WHID/tree/master/tools/Social_Engineering_Lures ) attached with a weaponized USB gadget and then use a common delivery carrier (e.g. UPS, DHL, FedEx).
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/Weaponized_PlasmaBall.png" width="300">

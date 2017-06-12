@@ -2,7 +2,7 @@
  * WHID Injector - ESP Sketch
  * http://whid.ninja
  * Forked by Luca Bongiorni
- * Based on ESPloit By www.Exploit.Agency / www.LegacySecurityGroup.com
+ * Based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 */
 
 #include <ESP8266WiFi.h>
