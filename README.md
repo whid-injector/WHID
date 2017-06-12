@@ -11,6 +11,7 @@ Available at:
 
 Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
+Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 
 ## The Hardware ##
 
