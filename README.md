@@ -68,6 +68,9 @@ Usually, I create a fancy brochure (sample template https://github.com/whid-inje
 [![WHID's Attack Simulation](https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/snapshot_youtube_2.jpg)](https://www.youtube.com/watch?v=U-TtobZXJcw)
 
 
+Please keep in mind that the following Video is for installing WHID Software into Cactus Micro (which has 512K/64K Flash). If you wanna install on Cactus WHID hardware, select 4M/3M option in Arduino's settings.
+
+
 [![How To Install WHID Software](https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/snapshot_youtube_1.jpg)](https://www.youtube.com/watch?v=MRGUSPW-Cr0)
 
 ## More to come... ##
