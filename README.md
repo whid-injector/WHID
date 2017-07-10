@@ -39,6 +39,8 @@ https://github.com/whid-injector/WHID/wiki
 
 ## Third-Party Softwares Compatible with WHID's Hardware ##
 
+https://github.com/exploitagency/ESPloitV2  An improved version of WHID GUI software!
+
 https://github.com/sensepost/USaBUSe
 
 https://github.com/spacehuhn/wifi_ducky

