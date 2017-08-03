@@ -37,7 +37,7 @@ int keypressdone=0;
 void setup() { 
   pinMode(13, OUTPUT);
   digitalWrite(13,HIGH);
-  Serial1.begin(4800);
+  Serial1.begin(1200);
   Keyboard.begin();
 }
 
@@ -47,7 +47,7 @@ void loop() {
     //If command equals "Press:X" or "Press:X+Y+ETC"
     if(cmd == "Press"){
       keypressdone=1;
-      String fullkeys = Serial1.readString();
+      String fullkeys = Serial1.readStringUntil('\n');
       int str_len = fullkeys.length()+1; 
       char keyarray[str_len];
       fullkeys.toCharArray(keyarray, str_len);
@@ -70,14 +70,14 @@ void loop() {
   
     //If command equals "Print:X"
     else if(cmd == "Print") {
-      String keycode = Serial1.readString();
+      String keycode = Serial1.readStringUntil('\n');
       delay(25);
       Keyboard.print(keycode);
     }
 
     //If command equals "PrintLine:X"
     else if(cmd == "PrintLine") {
-      String keycode = Serial1.readString();
+      String keycode = Serial1.readStringUntil('\n');
       delay(25);
       Keyboard.print(keycode);
       delay(25);
