@@ -24,22 +24,20 @@ int wifi_hidden = 0; // Set as 0 to broadcast AP's SSID or as 1 to hide SSID
 // #############################################
 
 
-int DelayLength=2000; //Length of time in ms to wait between sending lines from payload
+int DelayLength = 2000; //Length of time in ms to wait between sending lines from payload
 IPAddress local_IP(192,168,1,1); //IP of the esp8266 server
 IPAddress gateway(192,168,1,1);
 IPAddress subnet(255,255,255,0);
 ESP8266WebServer server(80);
 File fsUploadFile;
 File fsConfigFile;
-File fsLogFile;
 String webString;
 
 const String HTML_CSS_STYLING = "<style>a,body{background-color: #000;color: #0f0;}</style>";
 const String HTML_BACK_TO_INDEX = "<a href=\"/\"><- BACK TO INDEX</a><br><br>";
 const String CONFIG_FILE = "/whid_config.ini";
 
-void loadConfig()
-{
+void loadConfig(){
   fsConfigFile = SPIFFS.open(CONFIG_FILE, "r");
   if (!fsConfigFile)
   {
@@ -62,8 +60,7 @@ void loadConfig()
   fsConfigFile.close();
 }
 
-void setValue(String name, String value)
-{
+void setValue(String name, String value){
   if (name == "DelayLength")
     DelayLength = value.toInt();
   else if (name == "AccessPointMode")
@@ -78,8 +75,7 @@ void setValue(String name, String value)
     wifi_hidden = constrain(value.toInt(), 0, 1);
 }
 
-void writeConfig()
-{
+void writeConfig(){
   SPIFFS.remove(CONFIG_FILE);
   fsConfigFile = SPIFFS.open(CONFIG_FILE, "a");
   String line;
@@ -101,8 +97,7 @@ void writeConfig()
   }
 }
 
-void handleFileUpload()
-{
+void handleFileUpload(){
   if(server.uri() != "/upload") return;
   HTTPUpload& upload = server.upload();
   if(upload.status == UPLOAD_FILE_START){
@@ -124,7 +119,7 @@ void handleFileUpload()
 void ListPayloads(){
   String FileList = HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<h><b>Choose Payload:</b></h><br><br>";
   Dir dir = SPIFFS.openDir("/payloads");
-  while (dir.next()) {
+  while (dir.next()){
     String FileName = dir.fileName();
     File f = dir.openFile("r");
     FileList += " ";
@@ -133,8 +128,7 @@ void ListPayloads(){
   server.send(200, "text/html", FileList);
 }
 
-String GetConfigForm()
-{
+String GetConfigForm(){
   return (String)"<form method='POST' action='/config/update'><p>"
   + "Delay length (ms): <input type='number' name='DelayLength' value='" + DelayLength + "'>"
   + "<br>Channel: <input type='number' name='WiFiChannel' value='" + wifi_channel + "'>"
@@ -143,14 +137,15 @@ String GetConfigForm()
   + "<br>Hidden: <input type='checkbox' name='WiFiHidden' value=" + wifi_hidden + ">"
   + "<br><input type='submit' value='Save'></p></form>";  
 }
-void setup(void)
-{
+
+void setup(void){
   pinMode(LED_BUILTIN, OUTPUT); 
   Serial.begin(1200);
   SPIFFS.begin();
   loadConfig();
   
 // Determine if set to Access point mode
+
   if (wifi_accesspointmode == 1) {
     WiFi.softAPConfig(local_IP, gateway, subnet);
     WiFi.softAP(wifi_ssid, wifi_password, wifi_channel, wifi_hidden);
@@ -189,7 +184,7 @@ void setup(void)
     SPIFFS.format();
   });
     
-  server.on("/uploadpayload", []() {
+  server.on("/uploadpayload", [](){
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<b><h2>Upload Payload:</h2></b><br><br><form method='POST' action='/upload' enctype='multipart/form-data'><input type='file' name='upload'><input type='submit' value='Upload'></form>");
   });
     
@@ -197,19 +192,19 @@ void setup(void)
     
   server.onFileUpload(handleFileUpload);
     
-  server.on("/upload", HTTP_POST, []() {
+  server.on("/upload", HTTP_POST, [](){
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<h2>Upload Successful!</h2><br><br><a href=\"/listpayloads\">List Payloads</a>");
   });
 
   server.on("/showpayload", [](){
-    webString="";
+    webString = "";
     String payload;
     payload += server.arg(0);
     File f = SPIFFS.open(payload, "r");
     String webString = f.readString();
     f.close();
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<a href=\"/dopayload?payload="+payload+"\"><button>Run Payload</button></a><h2><pre>"+payload+"\n-----\n"+webString+"</pre></h2>");
-    webString="";
+    webString = "";
   });
 
   server.on("/dopayload", [](){
@@ -217,7 +212,7 @@ void setup(void)
     dopayload += server.arg(0);
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<pre><h3>Running payload: "+dopayload+"</h3></pre><br><h3>This may take a while to complete...</h3>");
     File f = SPIFFS.open(dopayload, "r");
-    while(f.available()) {
+    while(f.available()){
       String line = f.readStringUntil('\n');
       Serial.println(line);
       delay(DelayLength); //delay between lines in payload, I found running it slower works best
@@ -228,6 +223,6 @@ void setup(void)
   server.begin();
 }
 
-void loop() {
+void loop(){
   server.handleClient();
 }
