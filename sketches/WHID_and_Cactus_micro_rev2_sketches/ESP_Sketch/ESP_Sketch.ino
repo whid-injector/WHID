@@ -77,7 +77,7 @@ void setValue(String name, String value){
   else if (name == CONFIGNAME_WIFI_PASSWORD)
      value.toCharArray(wifi_password, sizeof(wifi_password));
   else if (name == CONFIGNAME_WIFI_CHANNEL)
-    wifi_channel = constrain(value.toInt(), 0, 13);
+    wifi_channel = constrain(value.toInt(), 1, 14);
   else if (name == CONFIGNAME_WIFI_HIDDEN)
     wifi_hidden = constrain(value.toInt(), 0, 1);
 }
@@ -137,15 +137,15 @@ void ListPayloads(){
 }
 
 String GetConfigForm(){
-  return (String)"<form method='POST' action='/config/update'><p>"
-  + "Delay length (ms): <input type='number' name='" + CONFIGNAME_DELAY_LENGTH + "' value='" + DelayLength + "'>"
-  + "<br>Channel: <input type='number' name='" + CONFIGNAME_WIFI_CHANNEL + "' value='" + wifi_channel + "'>"
-  + "<br>SSID: <input type='text' name='" + CONFIGNAME_WIFI_SSID + "' value='" + wifi_ssid + "'>"
-  + "<br>Password: <input type='text' name='" + CONFIGNAME_WIFI_PASSWORD + "' value='" + wifi_password + "'>"
-  + "<br>Hidden:"
-  + "<br><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=1 " + (wifi_hidden ? "checked" : "") + "> Yes"
-  + "<br><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=0 " + (wifi_hidden ? "" : "checked") + "> No"
-  + "<br><input type='submit' value='Save'></p></form>";  
+  return (String)"<form method='POST' action='/config/update'><table>"
+  + "<tr><td>Delay length:</td><td><input type='number' name='" + CONFIGNAME_DELAY_LENGTH + "' min=0 value='" + DelayLength + "'>(ms)</td></tr>"
+  + "<tr><td>Channel:</td><td><input type='number' name='" + CONFIGNAME_WIFI_CHANNEL + "' min=1 max=14 value='" + wifi_channel + "'></td></tr>"
+  + "<tr><td>SSID:</td><td><input type='text' name='" + CONFIGNAME_WIFI_SSID + "' maxlength=31 value='" + wifi_ssid + "'></td></tr>"
+  + "<tr><td>Password:</td><td><input type='text' name='" + CONFIGNAME_WIFI_PASSWORD + "' maxlength=63 value='" + wifi_password + "'></td></tr>"
+  + "<tr><td>Hidden:</td>"
+  + "<td><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=1 " + (wifi_hidden ? "checked" : "") + "> Yes"
+  + "<br><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=0 " + (wifi_hidden ? "" : "checked") + "> No</td></tr>"
+  + "</table><input type='submit' value='Save'></form>";  
 }
 
 void setup(void)
