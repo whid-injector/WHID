@@ -186,7 +186,7 @@ void setup(void)
     SPIFFS.format();
   });
     
-  server.on("/uploadpayload", [](){
+  server.on("/uploadpayload", []() {
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<b><h2>Upload Payload:</h2></b><br><br><form method='POST' action='/upload' enctype='multipart/form-data'><input type='file' name='upload'><input type='submit' value='Upload'></form>");
   });
     
