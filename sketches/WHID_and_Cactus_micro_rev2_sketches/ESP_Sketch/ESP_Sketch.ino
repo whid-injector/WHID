@@ -198,7 +198,7 @@ void setup(void)
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<h2>Upload Successful!</h2><br><br><a href=\"/listpayloads\">List Payloads</a>");
   });
 
-  server.on("/showpayload", []() {
+  server.on("/showpayload", [](){
     webString="";
     String payload;
     payload += server.arg(0);
@@ -206,7 +206,7 @@ void setup(void)
     String webString = f.readString();
     f.close();
     server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<a href=\"/dopayload?payload="+payload+"\"><button>Run Payload</button></a><h2><pre>"+payload+"\n-----\n"+webString+"</pre></h2>");
-    webString = "";
+    webString="";
   });
 
   server.on("/dopayload", [](){
