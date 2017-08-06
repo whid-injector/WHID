@@ -190,7 +190,7 @@ void setup(void)
   });
   
   server.on("/format", [](){
-    server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<h2>This will reformat the SPIFFS File System.</h2><br><br><h2>You will delete all Payloads! Are you sure?</h2><br><br><a href=\"/format/yes\">YES</a> - <a href=\"/\">NO</a>");
+    server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<h2>This will reformat the SPIFFS File System.</h2><br><br><h2>You will delete all Payloads and configurations! Are you sure?</h2><br><br><a href=\"/format/yes\">YES</a> - <a href=\"/\">NO</a>");
   });
 
   server.on("/format/yes", [](){
