@@ -97,7 +97,8 @@ void writeConfig(){
   }
 }
 
-void handleFileUpload(){
+void handleFileUpload()
+{
   if(server.uri() != "/upload") return;
   HTTPUpload& upload = server.upload();
   if(upload.status == UPLOAD_FILE_START){
@@ -119,7 +120,7 @@ void handleFileUpload(){
 void ListPayloads(){
   String FileList = HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<h><b>Choose Payload:</b></h><br><br>";
   Dir dir = SPIFFS.openDir("/payloads");
-  while (dir.next()){
+  while (dir.next()) {
     String FileName = dir.fileName();
     File f = dir.openFile("r");
     FileList += " ";
@@ -138,7 +139,8 @@ String GetConfigForm(){
   + "<br><input type='submit' value='Save'></p></form>";  
 }
 
-void setup(void){
+void setup(void)
+{
   pinMode(LED_BUILTIN, OUTPUT); 
   Serial.begin(1200);
   SPIFFS.begin();
