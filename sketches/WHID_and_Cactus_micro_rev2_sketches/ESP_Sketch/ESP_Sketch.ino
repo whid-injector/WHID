@@ -11,17 +11,17 @@
 #include <FS.h>
 
 
-// ####################################
-// ######## WiFi Configuration ########
-// ####################################
+// #############################################
+// ######## WiFi Configuration Defaults ########
+// #############################################
 int wifi_accesspointmode = 1; // set to 0 to connect to an existing network or leave it set to 1 to use the esp8266 as an access point
-char wifi_ssid[] = "WHID-Injector";
-char wifi_password[] = "Vivalaf1g@";
+char wifi_ssid[32] = "WHID-Injector";
+char wifi_password[64] = "Vivalaf1g@";
 int wifi_channel = 6;
 int wifi_hidden = 0; // Set as 0 to broadcast AP's SSID or as 1 to hide SSID
-// ####################################
-// ######## WiFi Configuration ########
-// ####################################
+// #############################################
+// ######## WiFi Configuration Defaults ########
+// #############################################
 
 
 int DelayLength=2000; //Length of time in ms to wait between sending lines from payload
@@ -133,10 +133,20 @@ void ListPayloads(){
   server.send(200, "text/html", FileList);
 }
 
+String GetConfigForm()
+{
+  return (String)"<form method='POST' action='/config/update'><p>"
+  + "Delay length (ms): <input type='number' name='DelayLength' value='" + DelayLength + "'>"
+  + "<br>Channel: <input type='number' name='WiFiChannel' value='" + wifi_channel + "'>"
+  + "<br>SSID: <input type='text' name='WiFiSSID' value='" + wifi_ssid + "'>"
+  + "<br>Password: <input type='text' name='WiFiPass' value='" + wifi_password + "'>"
+  + "<br>Hidden: <input type='checkbox' name='WiFiHidden' value=" + wifi_hidden + ">"
+  + "<br><input type='submit' value='Save'></p></form>";  
+}
 void setup(void)
 {
   pinMode(LED_BUILTIN, OUTPUT); 
-  Serial.begin(4800);
+  Serial.begin(1200);
   SPIFFS.begin();
   loadConfig();
   
@@ -155,7 +165,7 @@ void setup(void)
   });
 
   server.on("/config", [](){
-    server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<br><form method='POST' action='/config/update' enctype='multipart/form-data'><input type='number' name='DelayLength' value='" + DelayLength + "'><input type='submit' value='Save'></form>");
+    server.send(200, "text/html", HTML_CSS_STYLING + HTML_BACK_TO_INDEX + "<br>" + GetConfigForm());
   });
   
   server.on("/config/update", HTTP_POST, [](){
