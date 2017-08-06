@@ -142,7 +142,9 @@ String GetConfigForm(){
   + "<br>Channel: <input type='number' name='" + CONFIGNAME_WIFI_CHANNEL + "' value='" + wifi_channel + "'>"
   + "<br>SSID: <input type='text' name='" + CONFIGNAME_WIFI_SSID + "' value='" + wifi_ssid + "'>"
   + "<br>Password: <input type='text' name='" + CONFIGNAME_WIFI_PASSWORD + "' value='" + wifi_password + "'>"
-  + "<br>Hidden: <input type='checkbox' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=" + wifi_hidden + ">"
+  + "<br>Hidden:"
+  + "<br><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=1 " + (wifi_hidden ? "checked" : "") + "> Yes"
+  + "<br><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=0 " + (wifi_hidden ? "" : "checked") + "> No"
   + "<br><input type='submit' value='Save'></p></form>";  
 }
 
