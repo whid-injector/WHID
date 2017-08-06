@@ -145,6 +145,9 @@ String GetConfigForm(){
   + "<tr><td>Hidden:</td>"
   + "<td><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=1 " + (wifi_hidden ? "checked" : "") + "> Yes"
   + "<br><input type='radio' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=0 " + (wifi_hidden ? "" : "checked") + "> No</td></tr>"
+  + "<tr><td>WiFi Mode:</td>"
+  + "<td><input type='radio' name='" + CONFIGNAME_ACCESS_POINT_MODE + "' value=1 " + (wifi_accesspointmode ? "checked" : "") + "> Access Point"
+  + "<br><input type='radio' name='" + CONFIGNAME_ACCESS_POINT_MODE + "' value=0 " + (wifi_accesspointmode ? "" : "checked") + "> Client</td></tr>"
   + "</table><input type='submit' value='Save'></form>";  
 }
 
