@@ -35,7 +35,14 @@ String webString;
 
 const String HTML_CSS_STYLING = "<style>a,body{background-color: #000;color: #0f0;}</style>";
 const String HTML_BACK_TO_INDEX = "<a href=\"/\"><- BACK TO INDEX</a><br><br>";
+
 const String CONFIG_FILE = "/whid_config.ini";
+const String CONFIGNAME_DELAY_LENGTH = "DelayLength";
+const String CONFIGNAME_ACCESS_POINT_MODE = "AccessPointMode";
+const String CONFIGNAME_WIFI_SSID = "WiFiSSID";
+const String CONFIGNAME_WIFI_PASSWORD = "WiFiPass";
+const String CONFIGNAME_WIFI_CHANNEL = "WiFiChannel";
+const String CONFIGNAME_WIFI_HIDDEN = "WiFiHidden";
 
 void loadConfig(){
   fsConfigFile = SPIFFS.open(CONFIG_FILE, "r");
@@ -61,17 +68,17 @@ void loadConfig(){
 }
 
 void setValue(String name, String value){
-  if (name == "DelayLength")
+  if (name == CONFIGNAME_DELAY_LENGTH)
     DelayLength = value.toInt();
-  else if (name == "AccessPointMode")
+  else if (name == CONFIGNAME_ACCESS_POINT_MODE)
     wifi_accesspointmode = constrain(value.toInt(), 0, 1);
-  else if (name == "WiFiSSID")
+  else if (name == CONFIGNAME_WIFI_SSID)
      value.toCharArray(wifi_ssid, sizeof(wifi_ssid));
-  else if (name == "WiFiPass")
+  else if (name == CONFIGNAME_WIFI_PASSWORD)
      value.toCharArray(wifi_password, sizeof(wifi_password));
-  else if (name == "WiFiChannel")
+  else if (name == CONFIGNAME_WIFI_CHANNEL)
     wifi_channel = constrain(value.toInt(), 0, 13);
-  else if (name == "WiFiHidden")
+  else if (name == CONFIGNAME_WIFI_HIDDEN)
     wifi_hidden = constrain(value.toInt(), 0, 1);
 }
 
@@ -81,17 +88,17 @@ void writeConfig(){
   String line;
   if(fsConfigFile)
   {
-    line = String("DelayLength=") + String(DelayLength);
+    line = String(CONFIGNAME_DELAY_LENGTH) + String("=") + String(DelayLength);
     fsConfigFile.println(line);
-    line = String("AccessPointMode=") + String(wifi_accesspointmode);
+    line = String(CONFIGNAME_ACCESS_POINT_MODE) + String("=")  + String(wifi_accesspointmode);
     fsConfigFile.println(line);
-    line = String("WiFiSSID=") + String(wifi_ssid);
+    line = String(CONFIGNAME_WIFI_SSID) + String("=")  + String(wifi_ssid);
     fsConfigFile.println(line);
-    line = String("WiFiPass=") + String(wifi_password);
+    line = String(CONFIGNAME_WIFI_PASSWORD) + String("=")  + String(wifi_password);
     fsConfigFile.println(line);
-    line = String("WiFiChannel=") + String(wifi_channel);
+    line = String(CONFIGNAME_WIFI_CHANNEL) + String("=")  + String(wifi_channel);
     fsConfigFile.println(line);
-    line = String("WiFiHidden=") + String(wifi_hidden);
+    line = String(CONFIGNAME_WIFI_HIDDEN) + String("=")  + String(wifi_hidden);
     fsConfigFile.println(line);
     fsConfigFile.close();
   }
@@ -131,11 +138,11 @@ void ListPayloads(){
 
 String GetConfigForm(){
   return (String)"<form method='POST' action='/config/update'><p>"
-  + "Delay length (ms): <input type='number' name='DelayLength' value='" + DelayLength + "'>"
-  + "<br>Channel: <input type='number' name='WiFiChannel' value='" + wifi_channel + "'>"
-  + "<br>SSID: <input type='text' name='WiFiSSID' value='" + wifi_ssid + "'>"
-  + "<br>Password: <input type='text' name='WiFiPass' value='" + wifi_password + "'>"
-  + "<br>Hidden: <input type='checkbox' name='WiFiHidden' value=" + wifi_hidden + ">"
+  + "Delay length (ms): <input type='number' name='" + CONFIGNAME_DELAY_LENGTH + "' value='" + DelayLength + "'>"
+  + "<br>Channel: <input type='number' name='" + CONFIGNAME_WIFI_CHANNEL + "' value='" + wifi_channel + "'>"
+  + "<br>SSID: <input type='text' name='" + CONFIGNAME_WIFI_SSID + "' value='" + wifi_ssid + "'>"
+  + "<br>Password: <input type='text' name='" + CONFIGNAME_WIFI_PASSWORD + "' value='" + wifi_password + "'>"
+  + "<br>Hidden: <input type='checkbox' name='" + CONFIGNAME_WIFI_HIDDEN + "' value=" + wifi_hidden + ">"
   + "<br><input type='submit' value='Save'></p></form>";  
 }
 
