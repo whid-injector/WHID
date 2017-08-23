@@ -16,12 +16,17 @@ Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 ## HOW TO START [Newbies Edition] ##
 
 Since July 2017 all Cactus WHID are delivered with pre-loaded ESPloitV2 and are ready to Plug-n-Hack ✌
+
 Thus, even if you are not an Arduino expert, you can immediately have fun!
 
-Just plug it on a USB port and connect to the WiFi network
+Just plug it in an USB port and connect to the WiFi network:
+
 SSID "Exploit" 
+
 Password "DotAgency"
+
 Open a web browser pointed to "http://192.168.1.1"
+
 The default administration username is "admin" and password "hacktheplanet".
 
 https://youtu.be/5WTrKvQbK9o
