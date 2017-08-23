@@ -13,6 +13,21 @@ Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
 Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 
+## HOW TO START [Newbies Edition] ##
+
+Since July 2017 all Cactus WHID are delivered with pre-loaded ESPloitV2 and are ready to Plug-n-Hack ✌
+Thus, even if you are not an Arduino expert, you can immediately have fun!
+
+Just plug it on a USB port and connect to the WiFi network
+SSID "Exploit" 
+Password "DotAgency"
+Open a web browser pointed to "http://192.168.1.1"
+The default administration username is "admin" and password "hacktheplanet".
+
+https://youtu.be/5WTrKvQbK9o
+
+For cool payloads or more info check the Wiki or the Payloads directory.
+
 ## The Hardware ##
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/collage.jpg" width="300">
@@ -39,8 +54,7 @@ https://github.com/whid-injector/WHID/wiki
 
 ## Third-Party Softwares Compatible with WHID's Hardware ##
 
-https://github.com/exploitagency/ESPloitV2  An improved version of WHID GUI software!
-
+https://github.com/exploitagency/ESPloitV2  An improved version of WHID GUI 
 https://github.com/sensepost/USaBUSe
 
 https://github.com/spacehuhn/wifi_ducky
