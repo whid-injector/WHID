@@ -1,3 +1,6 @@
 [submodule "ESPloitv2"]
 	path = ESPloitv2
 	url = https://github.com/exploitagency/ESPloitV2
+[submodule "WifiDucky"]
+	path = WifiDucky
+	url = https://github.com/whid-injector/wifi_ducky
