@@ -2,6 +2,8 @@
 
 WiFi HID Injector for Fun & Profit
 
+Hardware Design Author: Luca Bongiorni - https://twitter.com/lucabongiorni
+
 Available at:
 
 * https://www.aliexpress.com/item/Cactus-Micro-compatible-board-plus-WIFI-chip-esp8266-for-atmega32u4/32318391529.html
@@ -9,7 +11,6 @@ Available at:
 * http://www.ebay.com/itm/Cactus-WHID-WiFi-HID-InjectorAn-USB-Rubberducky-On-Steroids-for-hackers-pentests-/252927790606
 
 
-Hardware Design Author: Luca Bongiorni - <info@whid.ninja> - http://whid.ninja
 
 Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 
