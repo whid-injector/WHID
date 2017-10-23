@@ -6,11 +6,13 @@ Hardware Design Author: Luca Bongiorni - https://twitter.com/lucabongiorni
 
 Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 
-Available at:
+Available at**:
 
 * [Aliexpress Shop](https://www.aliexpress.com/item/Cactus-Micro-compatible-board-plus-WIFI-chip-esp8266-for-atmega32u4/32318391529.html)
 * [April Borther Online Shop](https://blog.aprbrother.com/product/cactus-whid)
 * [eBay](http://www.ebay.com/itm/Cactus-WHID-WiFi-HID-InjectorAn-USB-Rubberducky-On-Steroids-for-hackers-pentests-/252927790606)
+
+**The Author has no profit out of the Cactus WHID sales.
 
 ## HOW TO START [Newbies Edition] ##
 
