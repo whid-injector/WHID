@@ -1,4 +1,5 @@
 # WHID Injector #
+[![Black Hat Arsenal EU](https://rawgit.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.toolswatch.org/2017/09/black-hat-arsenal-europe-2017-lineup/)
 
 WiFi HID Injector for Fun & Profit
 
