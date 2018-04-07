@@ -57,6 +57,7 @@ The pin closer to USB-A is GND. The pins are:
 
 ## Documentation WIKI ##
 
+I HEAVILY RECOMMEND TO READ IT ALL!
 https://github.com/whid-injector/WHID/wiki
 
 ## Third-Party Softwares Compatible with WHID's Hardware ##
