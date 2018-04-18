@@ -1,5 +1,8 @@
 # WHID Injector #
-[![Black Hat Arsenal EU](https://rawgit.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.toolswatch.org/2017/09/black-hat-arsenal-europe-2017-lineup/)
+
+
+[![Black Hat Arsenal Europe](https://github.com/toolswatch/badges/blob/master/arsenal/europe/2017.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/) [![ToolsWatch Best Tools](https://github.com/toolswatch/badges/blob/master/toptools/2017.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/)
+
 
 WiFi HID Injector for Fun & Profit
 
