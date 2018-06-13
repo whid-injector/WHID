@@ -13,8 +13,9 @@ Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 Available at**:
 
 * [Aliexpress Shop](https://www.aliexpress.com/item/Cactus-Micro-compatible-board-plus-WIFI-chip-esp8266-for-atmega32u4/32318391529.html)
-* [April Borther Online Shop](https://blog.aprbrother.com/product/cactus-whid)
-* [eBay](http://www.ebay.com/itm/Cactus-WHID-WiFi-HID-InjectorAn-USB-Rubberducky-On-Steroids-for-hackers-pentests-/252927790606)
+* [Tindie Shop](https://www.tindie.com/products/aprbrother/cactus-whid-wifi-hid-injector-usb-rubberducky)
+* [eBay Shop](https://www.ebay.com/sch/camealone/m.html)
+* [Manufacturer Online Shop](https://blog.aprbrother.com/product/cactus-whid)
 
 **The Author has no profit out of the Cactus WHID sales.
 
