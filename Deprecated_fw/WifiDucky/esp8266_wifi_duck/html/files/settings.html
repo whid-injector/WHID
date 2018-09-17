@@ -1,0 +1,135 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="functions.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<meta charset="utf-8">
+		<title>Wi-Fi Ducky</title>
+		<meta name="description" content="Wi-Fi enabled USB HID">
+		<meta name="author" content="Spacehuhn - Stefan Kremser">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="skeleton.css">
+	</head>
+	<body>
+		<nav>
+			<a href="index.html">Scripts</a>
+			<a href="live.html">Live Execute</a>
+			<a href="settings.html">Settings</a>
+			<ul class="nav right">
+				<a href="info.html">Info</a>
+			<ul>
+		</nav>
+		<div id="error"></div>
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<h1 class="header">Settings</h1>
+				</div>
+				<form action="settings.html" method="POST">
+					<h4>Wi-Fi</h4>
+					<div class="row">
+						<div class="six columns left"> 
+							<label for="ssid">SSID: </label> 
+						</div>
+						<div class="six columns left">
+							<input type="text" value="WiFi Duck" id="ssid" name="ssid" maxlength="32" minlength="1"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="six columns left"> 
+							<label for="pswd">Password: </label>
+							<p>Min. length 8 chars</p>
+						</div>
+						<div class="six columns left">
+							<input type="text" value="quackquack" id="pswd" name="pswd"  maxlength="32" minlength="8"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="six columns left"> 
+							<label for="ch">Channel: </label>
+						</div>
+						<div class="six columns left">
+							<input type="number" min="1" max="14" value="1" id="ch" name="ch" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="six columns left"> 
+							<label for="hidden">Hidden: </label>
+						</div>
+						<div class="six columns left">
+							<input type="checkbox" id="hidden" name="hidden" value="enabled" />
+						</div>
+					</div>	
+					<br />
+					<h4>Attack Settings</h4>
+					<div class="row">
+						<div class="six columns left"> 
+							<label for="autoExec">Enable Script Execution on Startup: </label>
+						</div>
+						<div class="six columns left">
+							<input type="checkbox" id="autoExec" name="autoExec" value="enabled" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="six columns left"> 
+							<label for="autostart">Auto-Script Name: </label>
+							<p>(The one to execute on startup)</p>
+						</div>
+						<div class="six columns left">
+							<input type="text" minlength="1" maxlength="32" value="autostart.txt" id="autostart" name="autostart" />
+						</div>
+					</div>
+					
+					<br />
+					<br />
+					
+					<input type="submit" class="button-primary right" value="save" />
+					
+				</form>
+				<br />
+				<br />
+				<button class="left button-warn" onclick="restart()">restart</button>
+				<button class="left margin-left" onclick="reset()">reset</button>
+			</div>
+		</div>
+		
+		<script>
+			
+			function set(e,v) document.getElementById(e).value = v;
+			function setChecked(e) document.getElementById(e).setAttribute('checked','checked');
+			
+			function loadSettings(){
+				getResponse("settings.json",function(responseText){
+					var res = JSON.parse(responseText);
+					
+					set("ssid",res.ssid);
+					set("pswd",res.password);
+					set("ch",res.channel);
+					set("hidden",res.hidden);
+					set("autostart",res.autostart);
+					if(res.hidden) setChecked("hidden");
+					if(res.autoExec) setChecked("autoExec");
+				});
+			}
+			
+			loadSettings();
+			
+			function restart(){
+				getResponse("restart",function(responseText){},function(){
+					document.getElementById("error").innerHTML = "device is restarting";
+				},1000);
+				
+			}
+			
+			function reset(){
+				getResponse("reset",function(responseText){
+					loadSettings();
+				});
+			}
+			
+		</script>
+	</body>
+</html>

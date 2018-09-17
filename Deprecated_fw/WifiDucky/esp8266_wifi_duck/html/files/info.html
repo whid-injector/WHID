@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="functions.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<meta charset="utf-8">
+		<title>Wi-Fi Ducky</title>
+		<meta name="description" content="Wi-Fi enabled USB HID">
+		<meta name="author" content="Spacehuhn - Stefan Kremser">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="skeleton.css">
+	</head>
+	<body>
+		<nav>
+			<a href="index.html">Scripts</a>
+			<a href="live.html">Live Execute</a>
+			<a href="settings.html">Settings</a>
+			<ul class="nav right">
+				<a href="info.html">Info</a>
+			<ul>
+		</nav>
+		<div id="error"></div>
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<h1 class="header">Info</h1>
+					<p>
+						<span class="bold">Wi-Fi Ducky v.1.1<br /><br />
+						Copyright (c) 2017 Stefan Kremser</span><br />
+						This project is licensed under the MIT License - see the <a href="license">license file</a> file for details.<br />
+						<br />
+						The source code is available on <a href="https://github.com/spacehuhn/wifi_ducky" target="_blank">GitHub</a>.<br />
+						<br />
+						<span class="bold">Sources and Additional Links:</span><br />
+						<a href="https://github.com/esp8266/Arduino">ESP8266 SDK</a> - licensed under the GNU Lesser General Public License v2.1<br />
+						<a href="https://github.com/me-no-dev/ESPAsyncWebServer">ESPAsyncWebServer</a> - copyright <a href="https://github.com/me-no-dev">Me No Dev</a><br />
+						<a href="https://github.com/me-no-dev/ESPAsyncTCP">ESPAsyncTCP</a> - licensed under the GNU Lesser General Public License v3.0<br />
+						<a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript">Ducky Script</a> - copyright <a href="https://www.hak5.org/">Hak5</a><br />
+						<a href="https://github.com/Seytonic/Duckduino-microSD">Duckduino</a> Ducky Script interpreter - copyright <a href="https://www.youtube.com/seytonic">Seytonic</a><br />
+						<a href="http://getskeleton.com/">Skeleton</a> CSS - licensed under the MIT License<br />
+					</p>
+					<hr />
+					<h2>Update</h2>
+					<p class="bold">Select the .bin file and press upload.</p>
+					<form method='POST' action='/update' enctype='multipart/form-data'>
+						<input type='file' name='update'>
+						<input type='submit' class="button-primary right" value='Upload'>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

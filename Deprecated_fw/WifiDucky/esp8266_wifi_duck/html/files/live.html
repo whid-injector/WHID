@@ -1,0 +1,209 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="functions.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<meta charset="utf-8">
+		<title>Wi-Fi Ducky</title>
+		<meta name="description" content="Wi-Fi enabled USB HID">
+		<meta name="author" content="Spacehuhn - Stefan Kremser">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="skeleton.css">
+	</head>
+	<body>
+		<nav>
+			<a href="index.html">Scripts</a>
+			<a href="live.html">Live Execute</a>
+			<a href="settings.html">Settings</a>
+			<ul class="nav right">
+				<a href="info.html">Info</a>
+			<ul>
+		</nav>
+		<div id="error"></div>
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<h1 class="header">Live Execute</h1>
+					
+					<form>
+						<textarea id="scriptTextArea" name='script' maxlength="1024" placeholder="STRING Hello World!" onkeyup="count()" onkeydown="count()" onchange="count()"></textarea>
+						<p><span id="charCount">0</span> / 1024</p>
+					</form>
+					<button onclick="save()" class="left">save script</button>
+					<button onclick="run()" class="button-primary right">run script</button>
+					
+					<br />
+					<br />
+					<br />
+					
+					<table>
+						<tr>
+							<th>Command</th>
+							<th>Description</th>
+						</tr>
+						
+						<tr>
+							<td>REM</td>
+							<td>Comment</td>
+						</tr>
+						
+						<tr>
+							<td>DEFAULTDELAY</td>
+							<td>Time in ms betweet every command</td>
+						</tr>
+						
+						<tr>
+							<td>DELAY</td>
+							<td>Delay in ms</td>
+						</tr>
+						
+						<tr>
+							<td>STRING</td>
+							<td>Types the following string</td>
+						</tr>
+						
+						<tr>
+							<td>REPLAY</td>
+							<td>Repeats the last command n times</td>
+						</tr>
+						
+						<tr>
+							<td>GUI</td>
+							<td>Windows or CMD key</td>
+						</tr>
+						
+						<tr>
+							<td>SHIFT</td>
+							<td>Shift key</td>
+						</tr>
+						
+						<tr>
+							<td>ALT</td>
+							<td>Alt key</td>
+						</tr>
+						
+						<tr>
+							<td>CTRL</td>
+							<td>Ctrl key</td>
+						</tr>
+						
+						<tr>
+							<td>ENTER</td>
+							<td>Return key</td>
+						</tr>
+						
+						<tr>
+							<td>DELETE</td>
+							<td>Backspace key</td>
+						</tr>
+						
+						<tr>
+							<td>ESC</td>
+							<td>ESC key</td>
+						</tr>
+						
+						<tr>
+							<td>INSERT</td>
+							<td>Insert key</td>
+						</tr>
+						
+						<tr>
+							<td>SPACE</td>
+							<td>Space key</td>
+						</tr>
+						
+						<tr>
+							<td>TAB</td>
+							<td>Tabulator key</td>
+						</tr>
+						
+						<tr>
+							<td>DOWN</td>
+							<td>Down Arrow Key</td>
+						</tr>
+						
+						<tr>
+							<td>LEFT</td>
+							<td>Left Arrow Key</td>
+						</tr>
+						
+						<tr>
+							<td>RIGHT</td>
+							<td>Right Arrow Key</td>
+						</tr>
+						
+						<tr>
+							<td>UP</td>
+							<td>Up Arrow Key</td>
+						</tr>
+						
+						<tr>
+							<td>CAPSLOCK</td>
+							<td>Toggles Capslock</td>
+						</tr>
+						
+						<tr>
+							<td>HOME</td>
+							<td>Home key</td>
+						</tr>
+						
+						<tr>
+							<td>APP</td>
+							<td>App key</td>
+						</tr>
+						
+						<tr>
+							<td>MENU</td>
+							<td>Menu key</td>
+						</tr>
+						
+						<tr>
+							<td>PAGEUP</td>
+							<td>Pageup key</td>
+						</tr>
+						
+						<tr>
+							<td>PAGEDOWN</td>
+							<td>Pagedown key</td>
+						</tr>
+						
+						
+					</table>
+					
+					<p>
+						For more information about Ducky Script click <a href="https://github.com/hak5darren/USB-Rubber-Ducky">here</a>, 
+						copyright goes to <a href="https://www.hak5.org/">Hak5</a> <3 .
+					</p>
+					
+				</div>
+			</div>
+		</div>
+		<script>
+		
+			function count(){
+				document.getElementById("charCount").innerHTML = document.getElementById("scriptTextArea").value.length;
+			}
+			
+			function run(){
+				var script = document.getElementById("scriptTextArea").value.replace(/\n\r?/g, '%0D');
+				getResponse("run?script="+script,function(responseText){
+					if(responseText == "true") showMessage("Executing Script...",2500);
+				},undefined,undefined, "POST");
+			}
+			
+			function save(){
+				var scriptName = prompt("Scriptname:");
+				if(scriptName !== null){
+					var script = document.getElementById("scriptTextArea").value.replace(/\n\r?/g, '%0D');
+					console.log(script);
+					getResponse("save?name="+scriptName+"&script="+script,function(responseText){
+						if(responseText == "true") showMessage("Script saved as '"+scriptName+"'",2500);
+					},undefined,undefined, "POST");
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+/* Global */
+.header{
+	font-size: 3rem;
+	margin-top: 1rem;
+	background: #00B0FF;
+	color: #fff;
+	padding:0.2rem;
+	border-radius:4px;
+}
+.button-warn{
+	background: #f00;
+	color: #fff;
+}
+nav{
+	background: #222;
+}
+nav a{
+	background: #222;
+	color: #999;
+	padding: 0.5em;
+	display: inline-block;
+	text-decoration: none;
+}
+nav a:hover{
+	background: #000;
+	color:#f0f0f0;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.bold{
+	font-weight: bold;
+}
+.margin-left{
+	margin-left: 1rem;
+}
+.clear{
+	clear: both;
+}
+table{
+	width: 100%;
+}
+#memoryGraph{
+	width: 12rem;
+}
+#scriptTextArea{
+	width:100%;
+	height:20rem;
+}
+#error{
+	text-align: center;
+	color: #fff;
+	background: #f00;
+}
