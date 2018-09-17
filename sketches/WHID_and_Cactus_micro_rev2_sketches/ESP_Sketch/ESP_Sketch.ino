@@ -1,4 +1,7 @@
 /*
+ * ############################################
+ * ### DEPRECATED FW! PLEASE USE ESPploitV2 ###
+ * ############################################
  * WHID Injector - ESP Sketch
  * http://whid.ninja
  * Forked by Luca Bongiorni
