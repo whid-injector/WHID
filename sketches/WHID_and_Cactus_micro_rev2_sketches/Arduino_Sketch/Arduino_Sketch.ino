@@ -1,4 +1,7 @@
 /*
+ * ################################################
+ * #### DEPRECATED FW! Please use ESPloitV2!!! ####
+ * ################################################
  * WHID Injector - Arduino Sketch
  * http://whid.ninja
  * Forked by Luca Bongiorni
