@@ -23,6 +23,8 @@ Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 
 [![WHID's Talk @ HackInParis 2018](https://raw.githubusercontent.com/whid-injector/WHID/master/tools/images/HiP_2k18.png)](https://www.youtube.com/watch?v=ADqMCKtufNY)
 
+Here the Video: [HiP 2018 Video](https://www.youtube.com/watch?v=ADqMCKtufNY)
+
 Here its slides: [HiP 2018 Slides](https://hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf)
 
 ## HOW TO START [Newbies Edition] ##
