@@ -3,7 +3,6 @@
 
 [![Black Hat Arsenal Europe](https://github.com/toolswatch/badges/blob/master/arsenal/europe/2017.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/) [![Black Hat Arsenal USA](https://github.com/toolswatch/badges/blob/master/arsenal/usa/2018.svg)](https://www.blackhat.com/us-18/arsenal/schedule/index.html#whid-injector-and-whid-elite-a-new-generation-of-hid-offensive-devices-10459) [![ToolsWatch Best Tools](https://github.com/toolswatch/badges/blob/master/toptools/2017.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/)
 
-
 **WiFi HID Injector for Fun & Profit**
 
 Hardware Design Author: Luca Bongiorni - https://twitter.com/lucabongiorni
@@ -17,7 +16,8 @@ Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 * [eBay Shop](https://www.ebay.com/sch/camealone/m.html)
 * [Manufacturer Online Shop](https://blog.aprbrother.com/product/cactus-whid)
 
-**The Author has no profit out of the Cactus WHID sales.
+** **The Author has no profit out of the Cactus WHID sales.**<br/>
+**But you can always buy me an Italian Coffee** :) <a href='https://ko-fi.com/X7X6L82L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 # Generic Overwiev #
 
