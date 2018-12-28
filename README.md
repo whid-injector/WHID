@@ -27,7 +27,8 @@ Here the Video: [HiP 2018 Video](https://www.youtube.com/watch?v=ADqMCKtufNY)
 
 Here its slides: [HiP 2018 Slides](https://hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf)
 
-## READ FIRST ALL THIS README OR DON'T YOU DARE TO OPEN ISSSUES. I AM SERIOUS!<br/>
+## READ FIRST ALL THIS README OR DON'T YOU DARE TO OPEN ISSUES.<br/>
+## I AM SERIOUS!<br/>
 
 
 
