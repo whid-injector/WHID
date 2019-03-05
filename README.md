@@ -6,6 +6,7 @@
 **WiFi HID Injector for Fun & Profit**<br>
 Hardware Design Author: Luca Bongiorni - https://twitter.com/lucabongiorni<br>
 Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com<br>
+WHID Mobile Connector by Paul https://twitter.com/paulwebsec<br>
 
 **For Sale at:****
 
