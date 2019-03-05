@@ -3,11 +3,9 @@
 
 [![Black Hat Arsenal Europe](https://github.com/toolswatch/badges/blob/master/arsenal/europe/2017.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/) [![Black Hat Arsenal USA](https://github.com/toolswatch/badges/blob/master/arsenal/usa/2018.svg)](https://www.blackhat.com/us-18/arsenal/schedule/index.html#whid-injector-and-whid-elite-a-new-generation-of-hid-offensive-devices-10459) [![ToolsWatch Best Tools](https://github.com/toolswatch/badges/blob/master/toptools/2017.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/)
 
-**WiFi HID Injector for Fun & Profit**
-
-Hardware Design Author: Luca Bongiorni - https://twitter.com/lucabongiorni
-
-Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
+**WiFi HID Injector for Fun & Profit**<br>
+Hardware Design Author: Luca Bongiorni - https://twitter.com/lucabongiorni<br>
+Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com<br>
 
 **For Sale at:****
 
@@ -16,8 +14,7 @@ Initial sw based on ESPloit by Corey Harding of www.LegacySecurityGroup.com
 * [eBay Shop](https://www.ebay.com/sch/camealone/m.html)
 * [Manufacturer Online Shop](https://blog.aprbrother.com/product/cactus-whid)
 
-** **The Author has no profit out of the Cactus WHID sales.**<br/>
-**But you can always buy me an Italian Coffee** :) <a href='https://ko-fi.com/X7X6L82L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+** **The Author has no profit out of the Cactus WHID sales. But you can always buy me an Italian Coffee** :) <a href='https://ko-fi.com/X7X6L82L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 # Generic Overwiev #
 
@@ -27,8 +24,9 @@ Here the Video: [HiP 2018 Video](https://www.youtube.com/watch?v=ADqMCKtufNY)
 
 Here its slides: [HiP 2018 Slides](https://hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf)
 
-## READ FIRST ALL THIS README OR DON'T YOU DARE TO OPEN ISSUES.<br/>
-## I AM SERIOUS!<br/>
+**NOTE:<br> WHID Injector has an Official Android App https://play.google.com/store/apps/details?id=whid.usb.injector and guess what, we open sourced it.<br> WHID Mobile Connector is Open/Source! Wanna contribute?<br>Look at https://github.com/whid-injector/WHID-Mobile-Connector**
+
+## READ FIRST ALL THIS README OR DON'T YOU DARE TO OPEN ISSUES. I AM SERIOUS!<br/>
 
 
 
