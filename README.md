@@ -129,7 +129,7 @@ https://blog.rootshell.be/2018/05/22/evil-mouse-project/
 
 https://medium.com/@LucaBongiorni/whid-injector-how-to-bring-hid-attacks-to-the-next-level-b06a40b7df22
 
-## Forensics Analysis of HID Offensice Implants from Societe Generale's CERT ##
+## Forensics Analysis of HID Offensive Implants from Societe Generale's CERT ##
 
 https://github.com/certsocietegenerale/Publications/blob/master/DFRWS%20EU19%20-%20The%20Rise%20Of%20HID%20Devices.pdf
 
