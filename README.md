@@ -15,7 +15,7 @@ WHID Mobile Connector by Paul https://twitter.com/paulwebsec<br>
 * [eBay Shop](https://www.ebay.com/sch/camealone/m.html)
 * [Manufacturer Online Shop](https://blog.aprbrother.com/product/cactus-whid)
 
-** **The Author has no profit out of the Cactus WHID sales. But you can always buy me an Italian Coffee** :) <a href='https://ko-fi.com/X7X6L82L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+** **The Author has no profit out of the Cactus WHID sales. But you can always buy him an Italian Coffee** :) <a href='https://ko-fi.com/X7X6L82L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 # Generic Overwiev #
 
