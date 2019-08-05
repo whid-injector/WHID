@@ -30,6 +30,7 @@
 //Requires Keyboard and SoftwareSerial library
 #include <Keyboard.h>
 #include <Mouse.h>
+#include "FingerprintUSBHost.h"
 //#include <SoftwareSerial.h>
 
 //Setup RX and TX pins to be used for the software serial connection
@@ -41,13 +42,14 @@
 //const int debug=0;
 
 String version = "2.2";
+String os;
 
 //Used later for determining if we are ready to release a key press or a combination of key presses
 int keypressdone=0;
 
 //Start serial interfaces and HID keyboard emulator
-void setup() { 
-
+void setup() {
+  
 //Start up the ESP 8266
   pinMode(13, OUTPUT);
   digitalWrite(13,HIGH);
@@ -59,6 +61,9 @@ void setup() {
   Serial1.begin(38400);
   Serial.begin(38400);
   Keyboard.begin();
+  delay(3000);
+  FingerprintUSBHost.guessHostOS(os);
+  delay(3000);    
 }
 
 //Do-IT!
@@ -104,6 +109,12 @@ void loop() {
 //        }
         keypressdone=0;
       }
+    }
+
+    //If command equals "GetOS"
+    else if(cmd.startsWith("GetOS")) {
+      Serial1.print("OS: ");
+      Serial1.println(os);
     }
   
     //If command equals "Print:X"
