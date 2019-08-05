@@ -1168,6 +1168,13 @@ void loop() {
           f.println(SerialEXFIL);
           f.close();
         }
+        else if(cmd == "OS"){
+          String os = Serial.readStringUntil('\n');
+          File f = SPIFFS.open("/OS.txt", "a+");
+          f.print("Target OS: "); 
+          f.println(os);
+          f.close();
+        }
         else if(cmd == "BlinkLED") {
           String cmdinput = Serial.readStringUntil('\n');
           int blinkcount = cmdinput.toInt();
