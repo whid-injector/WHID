@@ -48,8 +48,8 @@ String os;
 int keypressdone=0;
 
 //Start serial interfaces and HID keyboard emulator
-void setup() { 
-
+void setup() {
+  
 //Start up the ESP 8266
   pinMode(13, OUTPUT);
   digitalWrite(13,HIGH);
@@ -61,8 +61,9 @@ void setup() {
   Serial1.begin(38400);
   Serial.begin(38400);
   Keyboard.begin();
-  FingerprintUSBHost.guessHostOS(os);
   delay(3000);
+  FingerprintUSBHost.guessHostOS(os);
+  delay(3000);    
 }
 
 //Do-IT!
