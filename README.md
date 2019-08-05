@@ -90,7 +90,7 @@ https://github.com/whid-injector/WHID/wiki
 
 ## Third-Party Softwares Compatible with WHID's Hardware ##
 
-https://github.com/exploitagency/ESPloitV2  (Improved version of WHID GUI, installed by default on Cactus WHID hardware)
+https://github.com/whid-injector/WHID/tree/master/ESPloitV2_whid  (Improved version of WHID GUI, installed by default on Cactus WHID hardware)
 
 https://github.com/sensepost/USaBUSe (Dedicated software for AirGap bypass Vs Windows)
 
