@@ -1,0 +1,21 @@
+DefaultDelay:2000
+CustomDelay:5000
+Rem: Press ALT F2
+Rem: Opens Application Finder
+Press:134+195
+PrintLine:gnome-terminal
+PrintLine:nano
+PrintLine:echo Payload Here.
+PrintLine:echo Test Successful!
+Rem: Press CTRL x to save
+Press:128+120
+Rem: type y for yes
+Print:y
+Rem: File Name payload.sh
+PrintLine:payload.sh
+Rem: Make executable
+PrintLine:chmod 777 ./payload.sh
+Rem: Run payload
+PrintLine:./payload.sh
+PrintLine:rm payload.sh
+PrintLine:exit

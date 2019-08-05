@@ -1,0 +1,10 @@
+Rem: Move the mouse up, down, left, right, right click, middle click, left click.
+DefaultDelay:2000
+CustomDelay:5000
+MouseMoveUp:127
+MouseMoveDown:127
+MouseMoveLeft:127
+MouseMoveRight:127
+MouseClickRIGHT:
+MouseClickMIDDLE:
+MouseClickLEFT:

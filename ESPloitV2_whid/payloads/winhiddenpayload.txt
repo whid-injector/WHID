@@ -1,0 +1,12 @@
+Rem: Proof of concept for creating and running a payload.bat file and then deleting it.
+DefaultDelay:2000
+CustomDelay:5000
+Rem: 131 is "Windows Key or GUI" and 114 is "r"
+Rem: Brings up run menu
+Press:131+114
+PrintLine:cmd
+PrintLine:echo echo Payload Here.>>payload.bat
+PrintLine:echo echo Test Successful!>>payload.bat
+PrintLine:payload.bat
+PrintLine:del payload.bat
+PrintLine:exit

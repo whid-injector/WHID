@@ -1,0 +1,4 @@
+Rem: Run
+Press:131+114
+Rem: Bring up on screen keyboard
+PrintLine:osk

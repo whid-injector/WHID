@@ -1,0 +1,12 @@
+Rem: Apple's OS X does not allow plugging in a keyboard and immediately pressing buttons.
+Rem: It requires Right of Left Shift Key, "z", and Left of Right Shift Key, "/", to be pressed to identify the keyboard layout as English.
+Rem: This payload is a workaround and is only needs to be ran the first time the device is inserted, on future inserts this is not required.
+Rem: Instructions.
+Rem: Set this payload to run as automatic and insert the device or run it through the browser.
+Rem: Manually click "Continue", the payload will press the required keys to identify the keyboard.
+Rem: Now manually click "Done".
+DefaultDelay:2000
+CustomDelay:5000
+Press:122
+CustomDelay:3000
+Press:47
