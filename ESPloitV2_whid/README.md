@@ -1,5 +1,5 @@
 ## This is a local fork of ESPloit V2, since there are some PR unapproved on https://github.com/exploitagency/ESPloitV2 that I would like to merge. 
-### If you have PRs and don't get approved on Coreay's repo, do make them here. Thanks.
+### If you have PRs and don't get approved on Corey's repo, do make them here. Thanks.
   
 Created by Corey Harding  
 www.LegacySecurityGroup.com / www.Exploit.Agency  
