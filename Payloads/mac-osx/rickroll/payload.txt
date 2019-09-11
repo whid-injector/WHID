@@ -1,0 +1,8 @@
+Press:131+32
+Print:terminal
+Press:176
+CustomDelay:100
+Print:osascript -e "set Volume 10"
+Press:176
+Print:nohup open 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' &>/dev/null & ; exit
+Press:176
