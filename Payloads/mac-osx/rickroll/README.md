@@ -1,12 +1,12 @@
 # RickRoll prank for WHID Injector
 
-* Author: Phish
-* Version: Version 0.1
+* Author: [dunderhay](https://github.com/dunderhay)
+* Version: Version 0.2
 * Target: Mac-OSX
 
 # Description
 
-A simple rickroll script to prank the victim. Opens the terminal app and issues a command to open Rick Astley in a browser.
+Opens the terminal app and issues a command to open Rick Astley in a browser.
 
 # Notes
 
@@ -21,4 +21,3 @@ The following keys presses are emulated:
 | Key | In English | What it does |
 | --- | ------------ | ---------- |
 | 131+32 | Command (⌘) + Spacebar | Opens spotlight |
-| 176 | Enter | Press enter |
