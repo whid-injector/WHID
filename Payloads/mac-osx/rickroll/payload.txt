@@ -1,0 +1,3 @@
+Press:131+32
+PrintLine:terminal
+PrintLine:osascript -e "set Volume 10"; nohup open 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' &>/dev/null &; clear

