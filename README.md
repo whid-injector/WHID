@@ -81,7 +81,7 @@ The pin closer to USB-A is GND. The pins are:
 
 <img src="https://raw.githubusercontent.com/whid-injector/WHID/master/tools/hardware/p2-usb-pinout.png" width="300">
 
-[ In case an USB HUB is needed (i.e. to weaponize some USB gadget or mouse), usually, I do use this one https://www.tindie.com/products/mux/nanohub-tiny-usb-hub-for-hacking-projects or this https://www.aliexpress.com/item/Random-Color-Redbud-High-Speed-USB-2-0-4-Port-HUB-Fashion-Design-HUB-Computer-Accessories/32788390064.html]
+[ In case an USB HUB is needed (i.e. to weaponize some USB gadget or mouse), usually, I do use this one https://www.smart-prototyping.com/NanoHub-tiny-USB-hub-for-hacking-projects or https://www.tindie.com/products/mux/nanohub-tiny-usb-hub-for-hacking-projects or this https://www.aliexpress.com/item/Random-Color-Redbud-High-Speed-USB-2-0-4-Port-HUB-Fashion-Design-HUB-Computer-Accessories/32788390064.html]
 
 ## Documentation WIKI ##
 
