@@ -104,6 +104,7 @@ int livepayloaddelay;
 int autopwn;
 char autopayload[64];
 int open_network=0;
+int security_level = 1;
 
 void runpayload() {
     File f = SPIFFS.open(autopayload, "r");
@@ -172,8 +173,9 @@ void runpayload() {
 
 void settingsPage()
 {
-  if(!server.authenticate(update_username, update_password))
+  if(!server.authenticate(update_username, update_password) && security_level > 0)
     return server.requestAuthentication();
+
   String accesspointmodeyes;
   String accesspointmodeno;
   if (accesspointmode==1){
@@ -223,6 +225,16 @@ void settingsPage()
   else {
     hiddenyes="";
     hiddenno=" checked=\"checked\"";
+  }
+  String security_level_0 = "";
+  String security_level_1 = "";
+  String security_level_2 = "";
+  if (security_level == 0) {
+    security_level_0 = "selected";
+  } else if (security_level == 1) {
+    security_level_1 = "selected";
+  } else if (security_level == 2) {
+    security_level_2 = "selected";
   }
   server.send(200, "text/html", 
   String()+
@@ -294,6 +306,13 @@ void settingsPage()
   "Automatic Payload: <input type=\"text\" name=\"autopayload\" value=\"")+autopayload+F("\" maxlength=\"64\" size=\"31\"><br><br>"
   "<INPUT type=\"radio\" name=\"SETTINGS\" value=\"1\" hidden=\"1\" checked=\"checked\">"
   "<hr>"
+  "<b>Security level:</b><br><br>"
+  "<select name=\"security_level\">"
+  "<option value=\"0\" ") + security_level_0 + F(">Do not require authorization</option>"
+  "<option value=\"1\" ") + security_level_1 + F(">Authorization to change settings</option>"
+  "<option value=\"2\" ") + security_level_2 + F(">Authorization for all operations</option>"
+  "</select>"
+  "<hr>"
   "<INPUT type=\"submit\" value=\"Apply Settings\">"
   "</FORM>"
   "<br><a href=\"/reboot\"><button>Reboot Device</button></a>"
@@ -306,6 +325,9 @@ void settingsPage()
 
 void handleSettings()
 {
+  if(!server.authenticate(update_username, update_password) && security_level > 0)
+    return server.requestAuthentication();
+
   if (server.hasArg("SETTINGS")) {
     handleSubmitSettings();
   }
@@ -355,6 +377,7 @@ void handleSubmitSettings()
   livepayloaddelay = server.arg("LivePayloadDelay").toInt();
   autopwn = server.arg("autopwn").toInt();
   server.arg("autopayload").toCharArray(autopayload, 64);
+  security_level = server.arg("security_level").toInt();
   
   if (SETTINGSvalue == "1") {
     saveConfig();
@@ -405,6 +428,8 @@ bool loadDefaults() {
   json["LivePayloadDelay"] = "3000";
   json["autopwn"] = "0";
   json["autopayload"] = "/payloads/payload.txt";
+  json["security_level"] = 1;
+
   File configFile = SPIFFS.open("/esploit.json", "w");
   json.printTo(configFile);
   loadConfig();
@@ -522,6 +547,8 @@ bool loadConfig() {
 //    Serial.println(WiFi.localIP());
   }
 
+  security_level = json["security_level"];
+
   return true;
 }
 
@@ -556,6 +583,7 @@ bool saveConfig() {
   json["LivePayloadDelay"] = livepayloaddelay;
   json["autopwn"] = autopwn;
   json["autopayload"] = autopayload;
+  json["security_level"] = security_level;
 
   File configFile = SPIFFS.open("/esploit.json", "w");
   json.printTo(configFile);
@@ -568,6 +596,10 @@ String webString;
 void handleFileUpload()
 {
   if(server.uri() != "/upload") return;
+
+  if(!server.authenticate(update_username, update_password) && security_level > 1)
+    return server.requestAuthentication();
+
   HTTPUpload& upload = server.upload();
   if(upload.status == UPLOAD_FILE_START){
     String filename = upload.filename;
@@ -590,6 +622,9 @@ void handleFileUpload()
 }
 
 void ListPayloads(){
+  if(!server.authenticate(update_username, update_password) && security_level > 1)
+    return server.requestAuthentication();
+
   String directory;
   if(server.uri() == "/listpayloads") directory="/payloads";
   if(server.uri() == "/exfiltrate/list") directory="/";
@@ -629,6 +664,9 @@ bool RawFile(String rawfile) {
 }
 
 void ShowPayloads(){
+  if(!server.authenticate(update_username, update_password) && security_level > 1)
+    return server.requestAuthentication();
+
   webString="";
   String payload;
   String ShowPL;
@@ -682,6 +720,9 @@ void setup(void)
     });
   }
   server.on(rootdir,[]() {
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     FSInfo fs_info;
     SPIFFS.info(fs_info);
     String total;
@@ -802,6 +843,9 @@ void setup(void)
     });
     
     server.on("/validate", []() {
+      if(!server.authenticate(update_username, update_password) && security_level > 1)
+        return server.requestAuthentication();
+
       String url = server.arg("url");
       String user = server.arg("user");
       String pass = server.arg("pass");
@@ -832,6 +876,8 @@ void setup(void)
   server.on("/settings", handleSettings);
 
   server.on("/firmware", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
     latestversion = "";
     http.begin("http://legacysecuritygroup.com/esploit.php");
     int httpCode = http.GET();
@@ -866,18 +912,24 @@ void setup(void)
   });
 
   server.on("/autoupdatefirmware", [](){
-    if(!server.authenticate(update_username, update_password))
-    return server.requestAuthentication();
+    if(!server.authenticate(update_username, update_password) && security_level > 0)
+      return server.requestAuthentication();
     server.send(200, "text/html", String()+F("<html><body>Upgrading firmware...</body></html>"));
     ESPhttpUpdate.update("http://legacysecuritygroup.com/esploit.php?tag=" + version);
   });
   
   server.on("/livepayload", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     server.send(200, "text/html", String()+F("<html><body style=\"height: 100%;\"><a href=\"/esploit\"><- BACK TO INDEX</a><br><br><a href=\"/listpayloads\">List Payloads</a><br><br><a href=\"/uploadpayload\">Upload Payload</a><br><br><FORM action=\"/runlivepayload\" method=\"post\" id=\"live\" target=\"iframe\">Payload: <br><textarea style =\"width: 100%;\" form=\"live\" rows=\"4\" cols=\"50\" name=\"livepayload\"></textarea><br><br><INPUT type=\"radio\" name=\"livepayloadpresent\" value=\"1\" hidden=\"1\" checked=\"checked\"><INPUT type=\"submit\" value=\"Run Payload\"></form><br><hr><br><iframe style =\"visibility: hidden;\" src=\"http://")+local_IPstr+"/runlivepayload\" name=\"iframe\"></iframe></body></html>");
   });
 
 
   server.on("/runlivepayload", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     String livepayload;
     livepayload += server.arg("livepayload");
     if (server.hasArg("livepayloadpresent")) {
@@ -943,7 +995,7 @@ void setup(void)
          DelayLength = defaultdelay;  
       }
       DelayLength = settingsdefaultdelay;
-      return 0;
+      return;
     }
     else {
       server.send(200, "text/html", F("Type or Paste a payload and click \"Run Payload\"."));
@@ -951,11 +1003,13 @@ void setup(void)
   });
 
   server.on("/restoredefaults", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 0)
+      return server.requestAuthentication();
     server.send(200, "text/html", F("<html><body>This will restore the device to the default configuration.<br><br>Are you sure?<br><br><a href=\"/restoredefaults/yes\">YES</a> - <a href=\"/esploit\">NO</a></body></html>"));
   });
 
   server.on("/restoredefaults/yes", [](){
-    if(!server.authenticate(update_username, update_password))
+    if(!server.authenticate(update_username, update_password) && security_level > 0)
       return server.requestAuthentication();
     server.send(200, "text/html", F("<a href=\"/esploit\"><- BACK TO INDEX</a><br><br>Network<br>---<br>SSID: <b>Exploit</b> PASS: <b>DotAgency</b><br><br>Administration<br>---<br>USER: <b>admin</b> PASS: <b>hacktheplanet</b>"));
     loadDefaults();
@@ -963,13 +1017,16 @@ void setup(void)
   });
 
   server.on("/deletepayload", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     String deletepayload;
     deletepayload += server.arg(0);
     server.send(200, "text/html", "<html><body>This will delete the file: "+deletepayload+".<br><br>Are you sure?<br><br><a href=\"/deletepayload/yes?payload="+deletepayload+"\">YES</a> - <a href=\"/esploit\">NO</a></body></html>");
   });
 
   server.on("/deletepayload/yes", [](){
-    if(!server.authenticate(update_username, update_password))
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
       return server.requestAuthentication();
     String deletepayload;
     deletepayload += server.arg(0);
@@ -979,10 +1036,15 @@ void setup(void)
   });
 
   server.on("/format", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 0)
+      return server.requestAuthentication();
     server.send(200, "text/html", F("<html><body><a href=\"/esploit\"><- BACK TO INDEX</a><br><br>This will reformat the SPIFFS File System.<br><br>Are you sure?<br><br><a href=\"/format/yes\">YES</a> - <a href=\"/esploit\">NO</a></body></html>"));
   });
 
   server.on("/exfiltrate", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     String file = server.arg("file");
     String data = server.arg("data");
     // open the file in write mode
@@ -995,14 +1057,14 @@ void setup(void)
   server.on("/exfiltrate/list", ListPayloads);
 
   server.on("/reboot", [](){
-    if(!server.authenticate(update_username, update_password))
-    return server.requestAuthentication();
+    if(!server.authenticate(update_username, update_password) && security_level > 0)
+      return server.requestAuthentication();
     server.send(200, "text/html", F("<a href=\"/esploit\"><- BACK TO INDEX</a><br><br>Rebooting ESPloit..."));
     ESP.restart();
   });
   
   server.on("/format/yes", [](){
-    if(!server.authenticate(update_username, update_password))
+    if(!server.authenticate(update_username, update_password) && security_level > 0)
       return server.requestAuthentication();
     server.send(200, "text/html", F("<a href=\"/esploit\"><- BACK TO INDEX</a><br><br>Formatting file system: This may take up to 90 seconds"));
 //    Serial.print("Formatting file system...");
@@ -1012,6 +1074,8 @@ void setup(void)
   });
     
   server.on("/uploadpayload", []() {
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
     server.send(200, "text/html", F("<a href=\"/esploit\"><- BACK TO INDEX</a><br><br><a href=\"/listpayloads\">List Payloads</a><br><br><a href=\"/livepayload\">Live Payload Mode</a><br><br><b>Upload Payload:</b><br><br><form method='POST' action='/upload' enctype='multipart/form-data'><input type='file' name='upload' multiple><input type='submit' value='Upload'></form>"));
   });
     
@@ -1020,6 +1084,9 @@ void setup(void)
   server.onFileUpload(handleFileUpload);
     
   server.on("/upload", HTTP_POST, []() {
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     server.send(200, "text/html", F("<a href=\"/esploit\"><- BACK TO INDEX</a><br><br>Upload Successful!<br><br><a href=\"/listpayloads\">List Payloads</a><br><br><a href=\"/uploadpayload\">Upload Another Payload</a>"));
   });
 
@@ -1032,16 +1099,23 @@ void setup(void)
   });
 
   server.on("/inputmode", []() {
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
     server.send_P(200, "text/html", InputModePage);
   });
 
   server.on("/duckuino", []() {
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
     server.send_P(200, "text/html", Duckuino);
   });
     
   server.on("/showpayload", ShowPayloads);
 
   server.on("/dopayload", [](){
+    if(!server.authenticate(update_username, update_password) && security_level > 1)
+      return server.requestAuthentication();
+
     String dopayload;
     dopayload += server.arg(0);
     server.send(200, "text/html", String()+F("<a href=\"/esploit\"><- BACK TO INDEX</a><br><br><pre>Running payload: ")+dopayload+F("</pre><br>This may take a while to complete..."));
