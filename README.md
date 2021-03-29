@@ -125,6 +125,8 @@ https://www.youtube.com/channel/UCzh8wlTSYbdZCs__Djym5UQ/videos
 
 ## Blogposts about WHID ##
 
+https://www.x90x90.net/hardware/2021/03/26/HID-Implants-for-the-electrically-challenged.html
+
 https://blog.rootshell.be/2018/05/22/evil-mouse-project/
 
 https://medium.com/@LucaBongiorni/whid-injector-how-to-bring-hid-attacks-to-the-next-level-b06a40b7df22
