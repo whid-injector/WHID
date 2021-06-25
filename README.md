@@ -25,9 +25,8 @@ Here the Video: [HiP 2018 Video](https://www.youtube.com/watch?v=ADqMCKtufNY)
 
 Here its slides: [HiP 2018 Slides](https://hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf)
 
-**<br> WHID Injector has an Official Android App https://play.google.com/store/apps/details?id=whid.usb.injector and guess what, we open sourced it.
-![WHID Mobile Connector](https://user-images.githubusercontent.com/26245612/56274734-faafc780-6107-11e9-9a90-09faf557465a.JPG)
-<br> WHID Mobile Connector is Open/Source! Wanna contribute?<br>Look at https://github.com/whid-injector/WHID-Mobile-Connector**
+**<br> WHID Injector has an Official Android App https://apkpure.com/whid-mobile-connector/whid.usb.injector and guess what, we open sourced it.
+WHID Mobile Connector is Open/Source! Wanna contribute?<br>Look at https://github.com/whid-injector/WHID-Mobile-Connector**
 
 ## READ FIRST ALL THIS README OR DON'T YOU DARE TO OPEN ISSUES. I AM SERIOUS!<br/>
 
