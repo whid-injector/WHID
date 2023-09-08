@@ -134,3 +134,14 @@ https://medium.com/@LucaBongiorni/whid-injector-how-to-bring-hid-attacks-to-the-
 
 https://github.com/certsocietegenerale/Publications/blob/master/DFRWS%20EU19%20-%20The%20Rise%20Of%20HID%20Devices.pdf
 
+# How to report bugs:
+I won't spend time explaining in depth how to report issues, since I am pretty sure you have done it tons of times. 
+The main idea can be summed up in the following points:
+1. Expected Behavior
+2. Unexpected Behavior
+3. which OS you using?
+4. Which Arduino IDE version you using?
+5. Is the target computer an Apple Product?
+6. Is the target USB port an USB3.0?
+7. Eventual Explanation Notes, Screenshots, Videos, etc.
+
