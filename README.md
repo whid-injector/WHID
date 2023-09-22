@@ -15,6 +15,15 @@ WHID Mobile Connector by Paul https://twitter.com/paulwebsec<br>
 * [eBay Shop](https://www.ebay.com/sch/camealone/m.html)
 * [Manufacturer Online Shop](https://blog.aprbrother.com/product/cactus-whid)
 
+
+
+## WHID's Trainings
+The 𝙊𝙛𝙛𝙚𝙣𝙨𝙞𝙫𝙚 𝙃𝙖𝙧𝙙𝙬𝙖𝙧𝙚 𝙃𝙖𝙘𝙠𝙞𝙣𝙜 𝙏𝙧𝙖𝙞𝙣𝙞𝙣𝙜 is a Self-Paced training including Videos, a printed Workbook and a cool Hardware Hackit Kit. And... you get everything shipped home Worldwide! 🌍🔥😎<br>
+For more info... ➡ https://www.whid.ninja/store <br><br>
+[![WHID's Trainings](https://files.gandi.ws/64/2e/642e05f6-84e1-48fe-8a59-d678c7d635e3.PNG)](https://www.youtube.com/watch?v=zbUuBZJIHkE)
+
+
+
 ** **The Author has no profit out of the Cactus WHID sales. But you can always buy him an Italian Coffee** :) <a href='https://ko-fi.com/X7X6L82L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 # Generic Overwiev #
@@ -129,13 +138,6 @@ https://www.x90x90.net/hardware/2021/03/26/HID-Implants-for-the-electrically-cha
 https://blog.rootshell.be/2018/05/22/evil-mouse-project/
 
 https://medium.com/@LucaBongiorni/whid-injector-how-to-bring-hid-attacks-to-the-next-level-b06a40b7df22
-
-## WHID's Trainings
-The 𝙊𝙛𝙛𝙚𝙣𝙨𝙞𝙫𝙚 𝙃𝙖𝙧𝙙𝙬𝙖𝙧𝙚 𝙃𝙖𝙘𝙠𝙞𝙣𝙜 𝙏𝙧𝙖𝙞𝙣𝙞𝙣𝙜 is a Self-Paced training including Videos, a printed Workbook and a cool Hardware Hackit Kit. And... you get everything shipped home Worldwide! 🌍🔥😎<br>
-For more info... ➡ https://www.whid.ninja/store <br><br>
-
-[![WHID's Trainings](https://files.gandi.ws/64/2e/642e05f6-84e1-48fe-8a59-d678c7d635e3.PNG)](https://www.youtube.com/watch?v=zbUuBZJIHkE)
-
 
 ## Forensics Analysis of HID Offensive Implants from Societe Generale's CERT ##
 
