@@ -130,6 +130,13 @@ https://blog.rootshell.be/2018/05/22/evil-mouse-project/
 
 https://medium.com/@LucaBongiorni/whid-injector-how-to-bring-hid-attacks-to-the-next-level-b06a40b7df22
 
+## WHID's Trainings ##<br>
+The 𝙊𝙛𝙛𝙚𝙣𝙨𝙞𝙫𝙚 𝙃𝙖𝙧𝙙𝙬𝙖𝙧𝙚 𝙃𝙖𝙘𝙠𝙞𝙣𝙜 𝙏𝙧𝙖𝙞𝙣𝙞𝙣𝙜 is a Self-Paced training including Videos, a printed Workbook and a cool Hardware Hackit Kit. And... you get everything shipped home Worldwide! 🌍🔥😎<br>
+For more info... ➡ https://www.whid.ninja/store <br><br>
+
+[![WHID's Trainings](https://files.gandi.ws/64/2e/642e05f6-84e1-48fe-8a59-d678c7d635e3.PNG)](https://www.youtube.com/watch?v=zbUuBZJIHkE)
+
+
 ## Forensics Analysis of HID Offensive Implants from Societe Generale's CERT ##
 
 https://github.com/certsocietegenerale/Publications/blob/master/DFRWS%20EU19%20-%20The%20Rise%20Of%20HID%20Devices.pdf
