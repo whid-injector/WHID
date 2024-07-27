@@ -32,7 +32,7 @@ For more info... ➡ https://www.whid.ninja/store <br><br>
 
 Here the Video: [HiP 2018 Video](https://www.youtube.com/watch?v=ADqMCKtufNY)
 
-Here its slides: [HiP 2018 Slides](https://hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf)
+Here its slides: [HiP 2018 Slides](https://hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf) (dead url, see  [webarchive Nov 2021](https://web.archive.org/web/20211119231320/https://www.hackinparis.com/data/slides/2018/talks/HIP2018_Luca_Bongiorni_How_To_Bring_HID_Attacks_To_The_Next_Level.pdf))
 
 **<br> WHID Injector has an Official Android App https://apkpure.com/whid-mobile-connector/whid.usb.injector and guess what, we open sourced it.
 WHID Mobile Connector is Open/Source! Wanna contribute?<br>Look at https://github.com/whid-injector/WHID-Mobile-Connector**
